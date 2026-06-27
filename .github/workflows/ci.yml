@@ -1,4 +1,4 @@
-name: CI
+name: MegaLinter
 
 on:
   push:
@@ -7,32 +7,18 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build-and-test:
+  build:
+    name: MegaLinter
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-        cache: 'pip'
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        # If you have a requirements.txt or pyproject.toml, uncomment the lines below:
-        # pip install -e ".[dev]"
-        # OR
-        # pip install -r requirements.txt
-        # pip install ruff pytest
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Lint with Ruff
-      run: |
-        # ruff check .
-        echo "Linting placeholder (uncomment when project is active)"
-        
-    - name: Test with pytest
-      run: |
-        # pytest
-        echo "Testing placeholder (uncomment when project is active)"
+      - name: MegaLinter
+        id: ml
+        uses: oxsecurity/megalinter@v8
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
