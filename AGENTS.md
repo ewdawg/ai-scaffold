@@ -9,6 +9,17 @@ All tool-specific configuration files should be thin pointers back to this file.
 ## Tech Stack
 [TODO: List languages, frameworks, major dependencies, and tooling.]
 
+## Multi-agent Setup
+This repo is wired for several coding agents, all sharing **one** set of instructions in `AGENTS.md`. Edit project guidance there — the per-tool files are thin pointers:
+
+| Tool             | File(s)                                              | Role                              |
+| ---------------- | --------------------------------------------------- | --------------------------------- |
+| **(all agents)** | `AGENTS.md`                                          | Single source of truth            |
+| Claude Code      | `CLAUDE.md`                                          | Points to AGENTS.md               |
+| Gemini CLI       | `GEMINI.md`                                          | Points to AGENTS.md               |
+| OpenAI Codex CLI | `.codex/config.toml`                                 | Project model/approval settings   |
+| Cline            | `.clinerules/01-agents.md`                           | Points to AGENTS.md               |
+
 ## Repo Layout
 [TODO: Map out the critical directories and files so the agent knows where to look for what.]
 
