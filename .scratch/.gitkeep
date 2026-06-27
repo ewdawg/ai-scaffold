@@ -1,0 +1,4 @@
+# Agent Scratchpad
+
+This directory is used by AI agents to write temporary files, throwaway scripts, or test data.
+All contents of this directory (except this file) are ignored by Git.

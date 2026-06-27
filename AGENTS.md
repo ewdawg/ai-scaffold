@@ -22,6 +22,7 @@ This repo is wired for several coding agents, all sharing **one** set of instruc
 
 ## Repo Layout
 [TODO: Map out the critical directories and files so the agent knows where to look for what.]
+- `.scratch/`: A git-ignored sandbox directory. Feel free to use this folder to write temporary scripts, test hypotheses, or dump API responses without muddying the main source tree.
 
 ## CLI Commands
 [TODO: Document the primary commands for running, building, testing, and linting the project.]
