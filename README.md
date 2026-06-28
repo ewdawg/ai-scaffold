@@ -21,4 +21,9 @@ This repository is a **reusable template** designed to instantly kickstart AI-as
    git init     # Start fresh
    ```
 2. **Customize it:** Open `AGENTS.md` and `README.md` in your new project, search for the `[TODO]` blocks, and fill in the specifics about your new project's Tech Stack and Architecture.
-3. **Start Coding:** Drop your favorite AI agent into the project. It will instantly read the rules, check the status, and know exactly how to behave.
+3. **Reset the live-state files** so you're not starting from the scaffold's own metadata. The committed copies should already be pristine, but confirm:
+   - `STATUS.md` reads as a freshly-initialized project (the bullets under *Current state* should say "freshly initialized," not anything about scaffold development).
+   - `docs/CHANGELOG.md` has only the `[Unreleased]` entry.
+   - `docs/sessions/` contains only `000-template.md`.
+   - `docs/decisions/` contains only `000-template.md`.
+4. **Start Coding:** Drop your favorite AI agent into the project. It will instantly read the rules, check the status, and know exactly how to behave.
